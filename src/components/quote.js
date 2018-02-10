@@ -17,7 +17,9 @@ class Quote extends Component {
       }
     };
 
-    fetch("https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en",
+    var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    var targetUrl = "https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en"
+    fetch(proxyUrl+targetUrl,
     {
         headers: {
           'Content-Type': 'application/json',
@@ -37,11 +39,14 @@ class Quote extends Component {
   }
 
   getRandomQuote = () => {
-    fetch("https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en",
+    var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    var targetUrl = "https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en";
+    fetch( proxyUrl+targetUrl,
     {
         headers: {
           'Content-Type': 'application/json',
-          'Accept':'application/json'
+          'Accept':'application/json',
+          'Access-Control-Allow-Origin': 'http://localhost:3001'
         },
         method: "get",
         dataType: 'json',
