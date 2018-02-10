@@ -1,0 +1,43 @@
+body {
+  background-color: #424242;
+}
+
+.App {
+  text-align: center;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.App-header {
+  font-family: 'Roboto Slab', serif;
+  font-size: 28px;
+  padding-bottom: 40px;
+  color: #333;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.quoteCard {
+  /* align-content: center; */
+  margin: auto;
+  margin-top: 50px;
+  width: 75%;
+}
+
+.quoteAuth {
+  font-family: 'Dancing Script', cursive;
+  font-size : 30px;
+  padding-bottom: 30px;
+}
+
+.quoteText  {
+  padding-top: 30px;
+  font-family: 'Quattrocento', serif;
+  font-weight: 400;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 20px;
+}
