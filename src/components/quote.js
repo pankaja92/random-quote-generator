@@ -35,30 +35,6 @@ class Quote extends Component {
     this.setState({quote})   
   }
 
-
-  getRandomQuote = () => {
-    var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    var targetUrl = "https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en";
-    fetch( proxyUrl+targetUrl,
-    {
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept':'application/json',
-          'Access-Control-Allow-Origin': 'http://localhost:3001'
-        },
-        method: "get",
-        dataType: 'json',
-    })
-    .then((res) => res.json())
-    .then((res) => {
-      var quote = {};
-      quote.author = '-  ' +res.quoteAuthor;
-      quote.quotedesc = '" '+res.quoteText+' "';
-      this.setState({quote})
-    })
-    .catch((res)=> console.log(res))
-  }
-
   componentWillReceiveProps(nextProps){
     this.fetchQuote();
   }
@@ -74,8 +50,8 @@ class Quote extends Component {
     return (
       <div className='quoteCard'>
         <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
-          <CardText className='quoteText'>{this.state.quote.quotedesc} </CardText>
-          <CardTitle className='quoteAuth'>{this.state.quote.author}</CardTitle>
+          <CardText style={{'fontSize':'28px'}} className='quoteText'>{this.state.quote.quotedesc} </CardText>
+          <CardTitle style={{'fontSize':'22px'}}  className='quoteAuth'>{this.state.quote.author}</CardTitle>
         </Card>
       </div>
     );
